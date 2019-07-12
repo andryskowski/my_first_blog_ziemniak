@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <a class="navbar-brand" >
+          <img style="max-width:20px; margin-top: -12.5px; margin-bottom: -10px" " src="https://i.ibb.co/wRn89Cn/newlogo.png" alt="">
+        </a>
+  <a class="navbar-brand" > Galanty<span class='light'>Blog</span></a>
+  
+  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'O mnie', about_path, class: "nav-link #{yield(:about_active)}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Kontakt', contact_path, class: "nav-link #{yield(:contact_active)}" %>
+      </li>
+      <% if author_signed_in? %>
+           <li class="nav-item">
+        <%= link_to 'Moje posty', authors_posts_path, class: "nav-link #{yield(:author)}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Wyloguj sie', destroy_author_session_path, method: :delete, class: "nav-link" %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

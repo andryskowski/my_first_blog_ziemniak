@@ -1,0 +1,7 @@
+{
+  "name": "ziemniak",
+  "private": true,
+  "dependencies": {
+    "quill": "^1.3.6"
+  }
+}

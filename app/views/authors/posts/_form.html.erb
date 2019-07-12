@@ -1,0 +1,57 @@
+<%= form_for(post, url: url) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row"> 
+  <div class="col-md-3">
+
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title"><%= yield(:page_title) %></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+        <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+    </li>
+    <li class="list-group-item">
+          <div class="field">
+    <%= f.label :banner_image_url %>
+    <%= f.text_field :banner_image_url %>
+  </div>
+    </li>
+  <li class="list-group-item">
+          <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+</li>
+  <li class="list-group-item">
+          <div class="field">
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+</li>
+  </ul>
+</div>
+</div>
+<div class="col-md-9">
+
+        <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body%>
+  </div>
+
+<% end %>

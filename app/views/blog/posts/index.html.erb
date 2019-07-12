@@ -1,0 +1,10 @@
+<%provide(:page_tittle, 'All posts') %>
+<% provide(:author, 'active') %>
+
+
+<div class="row">
+<%= render @posts %>
+</div>
+<div class="pagination">
+<%= will_paginate @posts %>
+</div>
